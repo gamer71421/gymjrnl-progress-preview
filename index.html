@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>GymJRNL Progress — Locked History + New Exercises</title>
+  <style>
+    :root{color-scheme:dark;--bg:#050607;--surface:#141518;--line:#303238;--ink:#f5f5f7;--muted:#a0a0a7;--blue:#0a84ff}
+    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif}body{padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+    main{width:min(100%,1120px);margin:auto;padding:28px 12px 60px}h1{font-size:clamp(34px,8vw,58px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 12px}.intro{color:var(--muted);font-size:16px;line-height:1.5;max-width:720px;margin:0 0 28px}
+    .proof{font-size:12px;color:#acd6ff;background:#0b1d2d;border:1px solid #244969;border-radius:10px;padding:10px 12px;margin-bottom:30px}.section-title{font-size:27px;letter-spacing:-.025em;margin:32px 0 5px}.section-copy{color:var(--muted);font-size:14px;line-height:1.45;margin:0 0 15px}
+    .locked{display:grid;grid-template-columns:minmax(0,430px) 1fr;gap:18px;align-items:start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}.locked-copy{padding:6px 2px}.locked-copy h3{font-size:21px;margin:0 0 8px}.locked-copy p,.locked-copy li{color:var(--muted);font-size:14px;line-height:1.55}.locked-copy strong{color:var(--ink)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.concept{margin:0;border:1px solid var(--line);background:var(--surface);border-radius:16px;overflow:hidden}.concept header{padding:15px 15px 12px}.concept h3{font-size:20px;margin:0 0 5px}.concept p{font-size:13px;line-height:1.4;color:var(--muted);margin:0}.tag{display:inline-block;color:#acd6ff;font-size:11px;font-weight:650;background:#102439;border-radius:7px;padding:5px 7px;margin-bottom:9px}
+    img{display:block;width:100%;height:auto;background:#000}.concept img{border-top:1px solid var(--line)}.locked img{border:1px solid var(--line);border-radius:14px}.tech{padding:12px 15px 15px!important;border-top:1px solid var(--line)}
+    @media(max-width:840px){main{padding-left:10px;padding-right:10px}.locked{grid-template-columns:1fr}.locked img{width:100%;max-width:430px;margin:auto}.grid{grid-template-columns:1fr}.concept{max-width:520px;margin:0 auto 2px}.section-title{font-size:24px}}
+  </style>
+</head>
+<body>
+<main>
+  <h1>History is locked.<br>Exercises starts over.</h1>
+  <p class="intro">The History screen below is the original session timeline you chose earlier. The three Exercises screens are new compiled SwiftUI concepts built around workout-specific information, not generic dashboard cards.</p>
+  <div class="proof">Verified: Xcode 26.4 build passed · iPhone simulator captures · SwiftUI source · no production app files changed</div>
+
+  <h2 class="section-title">Saved History choice</h2>
+  <p class="section-copy">This is the exact original Training Timeline — Session Timeline. It is now written down as the locked direction.</p>
+  <section class="locked">
+    <img src="./locked-history-timeline.png" alt="Selected original History session timeline">
+    <div class="locked-copy">
+      <h3>Training Timeline · Session Timeline</h3>
+      <p><strong>Keep:</strong> the compact week rail, date column, August grouping, exact session titles, exact exercise highlights, and simple separators.</p>
+      <p><strong>Do not replace it with:</strong> Training Pulse, Session Ribbon, large hero metrics, or decorative gradient charts.</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">Three new Exercises directions</h2>
+  <p class="section-copy">Each concept uses a different native information model. These are not reskins of the previous options.</p>
+  <div class="grid">
+    <article class="concept">
+      <header><span class="tag">My recommendation</span><h3>A · Set Replay</h3><p>Compare the exact working sets from recent sessions side by side. The set—not a chart—is the primary visual object.</p></header>
+      <img src="./exercises-set-replay.png" alt="Set Replay Exercises concept rendered in SwiftUI">
+      <p class="tech">SwiftUI: snapping horizontal ScrollView, segmented Picker, semantic surfaces, monospaced exact values, native search and tab bar.</p>
+    </article>
+    <article class="concept">
+      <header><span class="tag">Progress-first</span><h3>B · Strength Ladder</h3><p>Turns the history of one movement into clear rungs, making real advancement easier to understand than a generic line chart.</p></header>
+      <img src="./exercises-strength-ladder.png" alt="Strength Ladder Exercises concept rendered in SwiftUI">
+      <p class="tech">SwiftUI: Canvas-drawn ladder, system Menu, exact milestone labels, metric strip, accessibility summary and native chrome.</p>
+    </article>
+    <article class="concept">
+      <header><span class="tag">Library-first</span><h3>C · Movement Map</h3><p>Shows what you train, how often, and how recently. Bubble size means sessions; horizontal position means recency.</p></header>
+      <img src="./exercises-movement-map.png" alt="Movement Map Exercises concept rendered in SwiftUI">
+      <p class="tech">SwiftUI: Canvas visualization, semantic colors, selected-exercise readout, accessible chart summary, native list fallback.</p>
+    </article>
+  </div>
+</main>
+</body>
+</html>
