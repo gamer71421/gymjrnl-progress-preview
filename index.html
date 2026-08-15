@@ -1,56 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>GymJRNL Progress — Locked History + New Exercises</title>
+  <title>GymJRNL Progress Exercises Concepts</title>
   <style>
-    :root{color-scheme:dark;--bg:#050607;--surface:#141518;--line:#303238;--ink:#f5f5f7;--muted:#a0a0a7;--blue:#0a84ff}
-    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif}body{padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-    main{width:min(100%,1120px);margin:auto;padding:28px 12px 60px}h1{font-size:clamp(34px,8vw,58px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 12px}.intro{color:var(--muted);font-size:16px;line-height:1.5;max-width:720px;margin:0 0 28px}
-    .proof{font-size:12px;color:#acd6ff;background:#0b1d2d;border:1px solid #244969;border-radius:10px;padding:10px 12px;margin-bottom:30px}.section-title{font-size:27px;letter-spacing:-.025em;margin:32px 0 5px}.section-copy{color:var(--muted);font-size:14px;line-height:1.45;margin:0 0 15px}
-    .locked{display:grid;grid-template-columns:minmax(0,430px) 1fr;gap:18px;align-items:start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}.locked-copy{padding:6px 2px}.locked-copy h3{font-size:21px;margin:0 0 8px}.locked-copy p,.locked-copy li{color:var(--muted);font-size:14px;line-height:1.55}.locked-copy strong{color:var(--ink)}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.concept{margin:0;border:1px solid var(--line);background:var(--surface);border-radius:16px;overflow:hidden}.concept header{padding:15px 15px 12px}.concept h3{font-size:20px;margin:0 0 5px}.concept p{font-size:13px;line-height:1.4;color:var(--muted);margin:0}.tag{display:inline-block;color:#acd6ff;font-size:11px;font-weight:650;background:#102439;border-radius:7px;padding:5px 7px;margin-bottom:9px}
-    img{display:block;width:100%;height:auto;background:#000}.concept img{border-top:1px solid var(--line)}.locked img{border:1px solid var(--line);border-radius:14px}.tech{padding:12px 15px 15px!important;border-top:1px solid var(--line)}
-    @media(max-width:840px){main{padding-left:10px;padding-right:10px}.locked{grid-template-columns:1fr}.locked img{width:100%;max-width:430px;margin:auto}.grid{grid-template-columns:1fr}.concept{max-width:520px;margin:0 auto 2px}.section-title{font-size:24px}}
+    :root {
+      color-scheme: dark;
+      --background: #000;
+      --surface: #1c1c1e;
+      --line: #38383a;
+      --text: #f2f2f7;
+      --secondary: #a1a1a6;
+      --accent: #0a84ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--background); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; }
+    body { padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); }
+    main { width: min(100%, 1120px); margin: 0 auto; padding: 24px 16px 56px; }
+    header { border-bottom: 1px solid var(--line); padding: 8px 0 24px; }
+    h1 { font-size: clamp(30px, 6vw, 48px); line-height: 1.05; letter-spacing: -.035em; margin: 0 0 12px; }
+    h2 { font-size: clamp(24px, 4vw, 34px); letter-spacing: -.025em; margin: 0; }
+    h3 { font-size: 18px; margin: 0 0 8px; }
+    p { color: var(--secondary); line-height: 1.5; margin: 0; }
+    .proof { margin-top: 16px; color: var(--text); font-size: 14px; }
+    .concept { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: start; }
+    .number { color: var(--accent); font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .summary { margin-top: 12px; font-size: 15px; }
+    ul { color: var(--secondary); padding-left: 20px; margin: 16px 0 0; line-height: 1.5; }
+    li + li { margin-top: 6px; }
+    .screens { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+    .screens.one { grid-template-columns: minmax(0, 430px); }
+    figure { margin: 0; }
+    img { display: block; width: 100%; height: auto; background: #000; border: 1px solid var(--line); border-radius: 10px; }
+    figcaption { color: var(--secondary); font-size: 12px; margin-top: 8px; }
+    .recommendation { color: var(--text); font-weight: 650; margin-top: 16px; }
+    .history { padding-top: 32px; }
+    .history-grid { display: grid; grid-template-columns: minmax(0, 430px) 1fr; gap: 24px; margin-top: 16px; align-items: start; }
+    .history-copy { padding-top: 4px; }
+    @media (max-width: 760px) {
+      main { padding-left: 12px; padding-right: 12px; }
+      .concept { grid-template-columns: 1fr; gap: 16px; }
+      .screens { grid-template-columns: 1fr; gap: 16px; }
+      .history-grid { grid-template-columns: 1fr; }
+      .history-grid img { max-width: 430px; margin: 0 auto; }
+    }
   </style>
 </head>
 <body>
-<main>
-  <h1>History is locked.<br>Exercises starts over.</h1>
-  <p class="intro">The History screen below is the original session timeline you chose earlier. The three Exercises screens are new compiled SwiftUI concepts built around workout-specific information, not generic dashboard cards.</p>
-  <div class="proof">Verified: Xcode 26.4 build passed · iPhone simulator captures · SwiftUI source · no production app files changed</div>
+  <main>
+    <header>
+      <h1>Progress → Exercises</h1>
+      <p>Three complete-catalog directions rendered from the native SwiftUI prototype. Every option keeps built-in, tracked, untracked, and personal exercises visible.</p>
+      <p class="proof">Xcode 26.4 build passed · iPhone simulator · dark appearance · Build 61 production files unchanged</p>
+    </header>
 
-  <h2 class="section-title">Saved History choice</h2>
-  <p class="section-copy">This is the exact original Training Timeline — Session Timeline. It is now written down as the locked direction.</p>
-  <section class="locked">
-    <img src="./locked-history-timeline.png" alt="Selected original History session timeline">
-    <div class="locked-copy">
-      <h3>Training Timeline · Session Timeline</h3>
-      <p><strong>Keep:</strong> the compact week rail, date column, August grouping, exact session titles, exact exercise highlights, and simple separators.</p>
-      <p><strong>Do not replace it with:</strong> Training Pulse, Session Ribbon, large hero metrics, or decorative gradient charts.</p>
-    </div>
-  </section>
+    <section class="concept">
+      <div>
+        <div class="number">01</div>
+        <h2>Replay Index</h2>
+        <p class="summary">A fast alphabetical catalog with exact recent sets available inside tracked rows.</p>
+        <p class="recommendation">Recommended direction</p>
+        <ul>
+          <li>The screen opens as a full A–Z exercise list.</li>
+          <li>Tracked rows show only confirmed results.</li>
+          <li>Opening a tracked row reveals three exact sessions without leaving the catalog.</li>
+        </ul>
+      </div>
+      <div class="screens">
+        <figure>
+          <img src="./exercises-replay-index.png" alt="Replay Index complete exercise catalog in SwiftUI">
+          <figcaption>Normal A–Z catalog state</figcaption>
+        </figure>
+        <figure>
+          <img src="./exercises-replay-index-replay.png" alt="Replay Index with Cable Row exact set replay expanded">
+          <figcaption>Inline exact Set Replay state</figcaption>
+        </figure>
+      </div>
+    </section>
 
-  <h2 class="section-title">Three new Exercises directions</h2>
-  <p class="section-copy">Each concept uses a different native information model. These are not reskins of the previous options.</p>
-  <div class="grid">
-    <article class="concept">
-      <header><span class="tag">My recommendation</span><h3>A · Set Replay</h3><p>Compare the exact working sets from recent sessions side by side. The set—not a chart—is the primary visual object.</p></header>
-      <img src="./exercises-set-replay.png" alt="Set Replay Exercises concept rendered in SwiftUI">
-      <p class="tech">SwiftUI: snapping horizontal ScrollView, segmented Picker, semantic surfaces, monospaced exact values, native search and tab bar.</p>
-    </article>
-    <article class="concept">
-      <header><span class="tag">Progress-first</span><h3>B · Strength Ladder</h3><p>Turns the history of one movement into clear rungs, making real advancement easier to understand than a generic line chart.</p></header>
-      <img src="./exercises-strength-ladder.png" alt="Strength Ladder Exercises concept rendered in SwiftUI">
-      <p class="tech">SwiftUI: Canvas-drawn ladder, system Menu, exact milestone labels, metric strip, accessibility summary and native chrome.</p>
-    </article>
-    <article class="concept">
-      <header><span class="tag">Library-first</span><h3>C · Movement Map</h3><p>Shows what you train, how often, and how recently. Bubble size means sessions; horizontal position means recency.</p></header>
-      <img src="./exercises-movement-map.png" alt="Movement Map Exercises concept rendered in SwiftUI">
-      <p class="tech">SwiftUI: Canvas visualization, semantic colors, selected-exercise readout, accessible chart summary, native list fallback.</p>
-    </article>
-  </div>
-</main>
+    <section class="concept">
+      <div>
+        <div class="number">02</div>
+        <h2>Muscle Chapters</h2>
+        <p class="summary">The full library grouped into strong, sticky movement chapters.</p>
+        <ul>
+          <li>Back, Chest, Legs, Shoulders, Arms, Core, Cardio, and Personal remain part of one catalog.</li>
+          <li>Chapter counts make the scale of the library obvious.</li>
+          <li>Rows stay compact and show tracked and untracked states together.</li>
+        </ul>
+      </div>
+      <div class="screens one">
+        <figure>
+          <img src="./exercises-muscle-chapters.png" alt="Muscle Chapters complete exercise catalog in SwiftUI">
+          <figcaption>Complete catalog grouped by muscle</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="concept">
+      <div>
+        <div class="number">03</div>
+        <h2>Training Library</h2>
+        <p class="summary">One compact recent-favorites shelf, followed immediately by the complete A–Z catalog.</p>
+        <ul>
+          <li>Frequent exercises are faster to return to.</li>
+          <li>The shelf never replaces or obscures the library.</li>
+          <li>Native sorting supports name, recency, muscle, and equipment.</li>
+        </ul>
+      </div>
+      <div class="screens one">
+        <figure>
+          <img src="./exercises-training-library.png" alt="Training Library complete exercise catalog in SwiftUI">
+          <figcaption>Recent favorites and the full catalog in one view</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="history">
+      <h2>History stays locked</h2>
+      <div class="history-grid">
+        <img src="./locked-history-timeline.png" alt="Previously selected History session timeline">
+        <div class="history-copy">
+          <h3>Training Timeline · Session Timeline</h3>
+          <p>The original History direction remains saved: compact week rail, date column, August grouping, exact session titles, exact exercise highlights, and simple separators.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
